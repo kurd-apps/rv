@@ -1,11 +1,23 @@
 {
-  "personalInfo": {
-    "nameEN": "Your Name",
-    "nameKU": "ناوەکەت",
-    "titleEN": "Full-Stack Developer",
-    "titleKU": "گەشەپێدەری وێب"
+  "profile": {
+    "name": { "en": "Your Name", "ku": "ناوەکەت لێرە بنووسە" },
+    "title": { "en": "Creative Designer & Web Developer", "ku": "دیزاینەر و گەشەپێدەری وێب" },
+    "image": "https://via.placeholder.com/150"
   },
-  "skills": [],
-  "projects": [],
-  "clients": []
+  "skills": [
+    { "name": { "en": "Photoshop & Illustrator", "ku": "فۆتۆشۆپ و ئیلێسترەیتەر" }, "level": "90%" },
+    { "name": { "en": "Web Development", "ku": "دروستکردنی وێبسایت" }, "level": "85%" },
+    { "name": { "en": "Medical Laboratory", "ku": "تاقیگەی پزیشکی" }, "level": "80%" }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": { "en": "Medical Dashboard", "ku": "داشبۆردی پزیشکی" },
+      "desc": { "en": "A complete system for clinics.", "ku": "سیستەمێکی تەواو بۆ نۆرینگەکان." },
+      "image": "https://via.placeholder.com/400x300"
+    }
+  ],
+  "clients": [
+    { "name": "Company A", "logo": "https://via.placeholder.com/100" }
+  ]
 }
