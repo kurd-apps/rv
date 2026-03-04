@@ -8,39 +8,107 @@
   ],
   "sections": {
     "hero": {
-      "name": { "en": "RV Portfolio", "ku": "ناوەکەت" },
-      "title": { "en": "Creative Director & Web Developer", "ku": "دەرهێنەری داهێنەر و گەشەپێدەری وێب" },
-      "subtitle": { "en": "", "ku": "" },
-      "image": ""
+      "name": {
+        "en": "RV Portfolio",
+        "ku": "ڕیڤان"
+      },
+      "title": {
+        "en": "Creative Director & Web Developer",
+        "ku": "دەرهێنەری داهێنەر و گەشەپێدەری وێب"
+      },
+      "subtitle": {
+        "en": "",
+        "ku": ""
+      },
+      "image": "https://raw.githubusercontent.com/kurd-apps/RV/main/images/1772614806171-3004022713918530097299244561243761708459415n.png"
     },
     "about": {
-      "heading": { "en": "About Me", "ku": "دەربارەی من" },
-      "desc": { "en": "I am a passionate designer...", "ku": "من دیزاینەرێکی پڕخولیام و ئەزموونێکی زۆرم هەیە لە بواری دیجیتاڵی." },
-      "businessHeading": { "en": "Kurdish Apps", "ku": "کوردیش ئەپس (Kurdish Apps)" },
-      "businessDesc": { "en": "Founder of Kurdish Apps.", "ku": "دامەزرێنەری بزنسی 'کوردیش ئەپس'م، کە ئامانجی دروستکردنی ئەپلیکەیشن و وێبسایتی پێشکەوتووە بۆ خزمەتکردنی کۆمەڵگەی دیجیتاڵی کوردی." },
-      "businessLogo": "",
+      "heading": {
+        "en": "About Me",
+        "ku": "دەربارەی من"
+      },
+      "desc": {
+        "en": "I am a passionate designer...",
+        "ku": "من دیزاینەرێکی پڕخولیام و ئەزموونێکی زۆرم هەیە لە بواری دیجیتاڵی."
+      },
+      "businessHeading": {
+        "en": "Kurdish Apps",
+        "ku": "کوردیش ئەپس (Kurdish Apps)"
+      },
+      "businessDesc": {
+        "en": "Founder of Kurdish Apps.",
+        "ku": "دامەزرێنەری بزنسی 'کوردیش ئەپس'م، کە ئامانجی دروستکردنی ئەپلیکەیشن و وێبسایتی پێشکەوتووە بۆ خزمەتکردنی کۆمەڵگەی دیجیتاڵی کوردی."
+      },
+      "businessLogo": "https://raw.githubusercontent.com/kurd-apps/RV/main/images/1772614709406-3004022713918530097299244561243761708459415n.png",
       "businessSocials": {
         "website": "https://kurdishapps.com",
         "facebook": "",
         "instagram": ""
       }
     },
-    "cv": { "heading": { "en": "Experience", "ku": "ئەزموونەکان" }, "items": [] },
-    "skills": { "heading": { "en": "Expertise", "ku": "شارەزاییەکان" }, "list": [] },
-    "clients": { "heading": { "en": "Companies", "ku": "کۆمپانیاکان" }, "logos": [] },
+    "cv": {
+      "heading": {
+        "en": "Experience",
+        "ku": "ئەزموونەکان"
+      },
+      "items": []
+    },
+    "skills": {
+      "heading": {
+        "en": "Expertise",
+        "ku": "شارەزاییەکان"
+      },
+      "list": []
+    },
+    "clients": {
+      "heading": {
+        "en": "Companies",
+        "ku": "کۆمپانیاکان"
+      },
+      "logos": []
+    },
     "contact": {
-      "heading": { "en": "Contact", "ku": "پەیوەندی" },
+      "heading": {
+        "en": "Contact",
+        "ku": "پەیوەندی"
+      },
       "email": "hello@example.com",
       "phone": "+964 770 000 0000",
-      "address": { "en": "Iraq", "ku": "عێراق" },
+      "address": {
+        "en": "Iraq",
+        "ku": "عێراق"
+      },
       "formKey": "e11bef32-363b-4c18-b93e-b519cf166cd0",
       "socials": {
-        "facebook": "",
-        "behance": "",
-        "instagram": "",
-        "youtube": ""
+        "facebook": "https://www.facebook.com/Kusoft14/",
+        "behance": "https://rvola.blogspot.com/",
+        "instagram": "https://rvola.blogspot.com/",
+        "youtube": "https://rvola.blogspot.com/"
       }
     }
   },
-  "projects": []
+  "projects": [
+    {
+      "title": {
+        "ku": "",
+        "en": ""
+      },
+      "category": "",
+      "shortDesc": {
+        "ku": "",
+        "en": ""
+      },
+      "fullDesc": {
+        "ku": "",
+        "en": ""
+      },
+      "images": [
+        "https://raw.githubusercontent.com/kurd-apps/RV/main/images/1772614793219-icon.png"
+      ],
+      "videoLink": "",
+      "date": "",
+      "websiteLink": "",
+      "displayType": "video"
+    }
+  ]
 }
