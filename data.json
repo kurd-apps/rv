@@ -1,21 +1,52 @@
 {
   "ui": {
-    "logo": { "en": "JULIA.", "ku": "جولیا." },
-    "navHome": { "en": "Home", "ku": "سەرەتا" },
-    "navWork": { "en": "Works", "ku": "کارەکانم" },
-    "navContact": { "en": "Contact", "ku": "پەیوەندی" },
-    "heroDesc": { "en": "I am a digital designer & web developer.", "ku": "من دیزاینەر و گەشەپێدەری وێبم." },
-    "workTitle": { "en": "Selected Works", "ku": "هەڵبژاردەی کارەکانم" },
-    "contactTitle": { "en": "Let's Talk", "ku": "با قسە بکەین" }
+    "logo": {
+      "en": "Rivan Omer Salim",
+      "ku": "ڕیڤان عومەر سەلیم"
+    },
+    "navHome": {
+      "en": "Home",
+      "ku": "سەرەتا"
+    },
+    "navWork": {
+      "en": "Works",
+      "ku": "کارەکانم"
+    },
+    "navContact": {
+      "en": "Contact",
+      "ku": "پەیوەندی"
+    },
+    "heroDesc": {
+      "en": "I am a digital designer & web developer.",
+      "ku": "من دیزاینەر و گەشەپێدەری وێبم."
+    },
+    "workTitle": {
+      "en": "Selected Works",
+      "ku": "هەڵبژاردەی کارەکانم"
+    },
+    "contactTitle": {
+      "en": "Let's Talk",
+      "ku": "با قسە بکەین"
+    }
   },
   "projects": [
     {
       "id": 1,
-      "title": { "en": "Medical Lab Interface", "ku": "ڕووکاری تاقیگەی پزیشکی" },
-      "category": { "en": "Web Design", "ku": "وێب دیزاین" },
-      "desc": { "en": "A full dashboard for medical labs to manage tests.", "ku": "داشبۆردێکی تەواو بۆ تاقیگەکان." },
+      "title": {
+        "en": "Medical Lab Interface",
+        "ku": "ڕووکاری تاقیگەی پزیشکی"
+      },
+      "category": {
+        "en": "Web Design",
+        "ku": "وێب دیزاین"
+      },
+      "desc": {
+        "en": "A full dashboard for medical labs to manage tests.",
+        "ku": "داشبۆردێکی تەواو بۆ تاقیگەکان."
+      },
       "images": [
-        "https://via.placeholder.com/800x600"
+        "https://via.placeholder.com/800x600",
+        "https://raw.githubusercontent.com/kurd-apps/RV-portfolio/main/images/1772601621845-icon.png"
       ],
       "videoLink": "https://youtube.com/..."
     }
