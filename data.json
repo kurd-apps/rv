@@ -8,14 +8,14 @@
   ],
   "sections": {
     "hero": {
-      "navLogo": "images/1772624195718-unnamed.jpg",
+      "navLogo": "",
       "name": {
         "en": "Rivan",
         "ku": "ڕیڤان"
       },
       "title": {
-        "en": "Laboratory Technician & Web Developer",
-        "ku": "یاریدەدەری تاقیگە و گەشەپێدەری وێب"
+        "en": "Laboratory Technician",
+        "ku": "یاریدەدەری تاقیگە"
       },
       "subtitle": {
         "en": "",
@@ -23,8 +23,8 @@
       },
       "image": "images/1772618115973-rivan.png",
       "imagePos": {
-        "x": "50",
-        "y": "0"
+        "x": 50,
+        "y": 50
       }
     },
     "about": {
@@ -40,36 +40,19 @@
     "businesses": [
       {
         "heading": {
-          "ku": "کوردیش ئەپس",
-          "en": "Kurdish Apps"
+          "en": "Kurdish Apps",
+          "ku": "کوردیش ئەپس"
         },
         "desc": {
-          "ku": "دامەزرێنەری بزنسی 'کوردیش ئەپس'م، کە ئامانجی دروستکردنی ئەپلیکەیشن و وێبسایتی پێشکەوتووە بۆ خزمەتکردنی کۆمەڵگەی دیجیتاڵی کوردی.",
-          "en": "I am the founder of the business 'Kurdish Apps', which aims to create advanced applications and websites to serve the Kurdish digital community."
+          "en": "I am the founder of the business 'Kurdish Apps', which aims to create advanced applications and websites to serve the Kurdish digital community.",
+          "ku": "دامەزرێنەری بزنسی 'کوردیش ئەپس'م، کە ئامانجی دروستکردنی ئەپلیکەیشن و وێبسایتی پێشکەوتووە بۆ خزمەتکردنی کۆمەڵگەی دیجیتاڵی کوردی."
         },
-        "logo": "images/1772614709406-3004022713918530097299244561243761708459415n.png",
+        "logo": "images/1772615613895-3004022713918530097299244561243761708459415n.png",
         "socials": {
           "website": "",
           "facebook": "https://www.facebook.com/Kusoft14/",
           "instagram": "",
           "youtube": "https://www.youtube.com/c/KurdishAppsTM"
-        }
-      },
-      {
-        "heading": {
-          "ku": "شیرینستان",
-          "en": "Shirinistan"
-        },
-        "desc": {
-          "ku": "دامەزرێنەری کارگەی 'شیرینستان'م کە تایبەتە بە دروستکردنی شیرینی بۆ بۆنە و ئاهەنگەکان.",
-          "en": "Founder of 'Shirinistan,' a factory specializing in crafting premium sweets and cookies for events and celebrations."
-        },
-        "logo": "images/1772618930244-banner.png",
-        "socials": {
-          "website": "https://shirinstan.wuaze.com/",
-          "facebook": "https://www.facebook.com/Shirinstan",
-          "instagram": "https://www.instagram.com/shirinstan_sweets",
-          "youtube": ""
         }
       }
     ],
@@ -127,14 +110,14 @@
         {
           "name": {
             "ku": "وێبسایت",
-            "en": "Website Development"
+            "en": "Website"
           },
           "percent": "85"
         },
         {
           "name": {
             "ku": "دیزاین",
-            "en": "Graphic Design"
+            "en": "Design"
           },
           "percent": "85"
         }
@@ -142,14 +125,18 @@
     },
     "clients": {
       "heading": {
-        "en": "Partners",
-        "ku": "هاوبەشەکانم (کۆمپانیاکان)"
+        "en": "Companies",
+        "ku": "کۆمپانیاکان"
       },
       "logos": [
         "images/1772614709406-3004022713918530097299244561243761708459415n.png"
       ]
     },
     "contact": {
+      "heading": {
+        "en": "Contact",
+        "ku": "پەیوەندی"
+      },
       "email": "rivan.vola18@gmail.com",
       "phone": "+964 773 174 75 7 6",
       "address": {
@@ -159,13 +146,9 @@
       "formKey": "e11bef32-363b-4c18-b93e-b519cf166cd0",
       "socials": {
         "facebook": "https://www.facebook.com/rivan.vola",
+        "behance": "https://www.behance.net/volakurd",
         "instagram": "",
-        "youtube": "https://www.youtube.com/@rivanvola8424",
-        "behance": "https://www.behance.net/volakurd"
-      },
-      "heading": {
-        "en": "Contact",
-        "ku": "پەیوەندی"
+        "youtube": "https://www.youtube.com/@rivanvola8424"
       }
     }
   },
@@ -188,7 +171,7 @@
         "images/1772618930244-banner.png"
       ],
       "bannerImage": "images/1772618930244-banner.png",
-      "videoLink": "https://youtu.be/jUgfWwRHSwA",
+      "videoLink": "https://youtu.be/jUgfWwRHSwA?si=uMYiC0EozJw2dCvM",
       "date": "2025-11-01",
       "websiteLink": "https://shirinstan.wuaze.com/",
       "displayType": "image"
