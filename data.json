@@ -80,6 +80,44 @@
       "images": [
         "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
       ]
+    },
+    {
+      "title": {
+        "ku": "",
+        "en": ""
+      },
+      "category": "وێب دیزاین",
+      "date": "",
+      "shortDesc": {
+        "ku": "",
+        "en": ""
+      },
+      "fullDesc": {
+        "ku": "",
+        "en": ""
+      },
+      "videoLink": "",
+      "websiteLink": "",
+      "images": []
+    },
+    {
+      "title": {
+        "ku": "",
+        "en": ""
+      },
+      "category": "وێب دیزاین",
+      "date": "",
+      "shortDesc": {
+        "ku": "",
+        "en": ""
+      },
+      "fullDesc": {
+        "ku": "",
+        "en": ""
+      },
+      "videoLink": "",
+      "websiteLink": "",
+      "images": []
     }
   ]
 }
