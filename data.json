@@ -1,120 +1,45 @@
 {
   "sections": {
     "hero": {
-      "name": {
-        "en": "Your Name",
-        "ku": "ناوی تۆ"
-      },
-      "title": {
-        "en": "Creative Director & Developer",
-        "ku": "دەرهێنەری داهێنەر و گەشەپێدەر"
-      },
-      "subtitle": {
-        "en": "I build digital experiences.",
-        "ku": "ئەزموونی دیجیتاڵی دروست دەکەم."
-      },
+      "name": { "en": "Your Name", "ku": "ناوی تۆ" },
+      "title": { "en": "Creative Director & Developer", "ku": "دەرهێنەری داهێنەر و گەشەپێدەر" },
+      "subtitle": { "en": "I build digital experiences.", "ku": "ئەزموونی دیجیتاڵی دروست دەکەم." },
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
     },
     "about": {
-      "heading": {
-        "en": "About Me",
-        "ku": "دەربارەی من"
-      },
-      "desc": {
-        "en": "I am a passionate designer...",
-        "ku": "من دیزاینەرێکی پڕخولیام..."
-      }
+      "heading": { "en": "About Me", "ku": "دەربارەی من" },
+      "desc": { "en": "I am a passionate designer...", "ku": "من دیزاینەرێکی پڕخولیام..." }
     },
     "cv": {
-      "heading": {
-        "en": "Experience & Education",
-        "ku": "ئەزموون و بڕوانامە (CV)"
-      },
-      "items": [
-        {
-          "role": {
-            "ku": "سەرپەرشتیاری مۆنتاژ",
-            "en": "Senior Editor"
-          },
-          "place": {
-            "ku": "کۆمپانیای میدیا",
-            "en": "Media Company"
-          },
-          "year": "2022 - 2026",
-          "desc": {
-            "ku": "سەرپەرشتی بەرهەمهێنانی ڤیدیۆکانم کردووە.",
-            "en": "Managed full video production."
-          }
-        }
-      ]
+      "heading": { "en": "Experience", "ku": "ئەزموونەکان" },
+      "items": []
     },
     "skills": {
-      "heading": {
-        "en": "Expertise",
-        "ku": "شارەزاییەکان"
-      },
-      "list": [
-        {
-          "name": {
-            "ku": "مۆنتاژی ڤیدیۆ",
-            "en": "Video Editing"
-          },
-          "percent": "90"
-        },
-        {
-          "name": {
-            "ku": "",
-            "en": ""
-          },
-          "percent": ""
-        }
-      ]
+      "heading": { "en": "Expertise", "ku": "شارەزاییەکان" },
+      "list": []
     },
     "clients": {
-      "heading": {
-        "en": "Companies I've Worked With",
-        "ku": "ئەو کۆمپانیایانەی کارم بۆ کردوون"
-      },
-      "logos": [
-        "https://raw.githubusercontent.com/kurd-apps/RV/main/images/1772604168470-icon.png"
-      ]
+      "heading": { "en": "Companies I've Worked With", "ku": "ئەو کۆمپانیایانەی کارم بۆ کردوون" },
+      "logos": []
     },
     "contact": {
-      "heading": {
-        "en": "Let's Work Together",
-        "ku": "پەیوەندیم پێوە بکە"
-      },
+      "heading": { "en": "Let's Work Together", "ku": "پەیوەندیم پێوە بکە" },
       "email": "hello@example.com",
       "phone": "+964 770 000 0000",
-      "address": {
-        "en": "Sulaymaniyah, Iraq",
-        "ku": "سلێمانی، عێراق"
-      }
+      "address": { "en": "Sulaymaniyah, Iraq", "ku": "سلێمانی، عێراق" }
     }
   },
   "projects": [
     {
-      "title": {
-        "ku": "",
-        "en": "trff"
-      },
-      "category": {
-        "ku": "",
-        "en": "ff"
-      },
-      "shortDesc": {
-        "ku": "",
-        "en": "ff"
-      },
-      "fullDesc": {
-        "ku": "",
-        "en": "fff"
-      },
-      "videoLink": "https://shirinstan.wuaze.com/?i=1",
-      "images": [
-        "https://raw.githubusercontent.com/kurd-apps/RV/main/images/1772604123291-GeminiGeneratedImagexi5avdxi5avdxi5a.png",
-        "https://raw.githubusercontent.com/kurd-apps/RV/main/images/1772604133141-GeminiGeneratedImagerdqhwerdqhwerdqh.png"
-      ]
+      "id": 1,
+      "title": { "en": "Medical Lab Dashboard", "ku": "داشبۆردی تاقیگەی پزیشکی" },
+      "category": "وێب دیزاین",
+      "date": "2026-03-01",
+      "shortDesc": { "en": "A complete system.", "ku": "سیستەمێکی تەواو بۆ تاقیگەکان." },
+      "fullDesc": { "en": "<b>Detailed</b> description here.", "ku": "<b>سیستەمێکی زۆر پێشکەوتوو</b> کە دەتوانێت هەموو کارەکان ئاسان بکات." },
+      "images": ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"],
+      "videoLink": "",
+      "websiteLink": "https://example.com"
     }
   ]
 }
