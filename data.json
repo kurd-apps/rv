@@ -20,7 +20,7 @@
         "en": "I build digital experiences and craft visual stories.",
         "ku": "من ئەزموونی دیجیتاڵی و چیرۆکی بینراو دروست دەکەم."
       },
-      "image": ""
+      "image": "file:///C:/Users/smart/OneDrive/Desktop/dashboard.html"
     },
     "about": {
       "heading": {
@@ -40,17 +40,17 @@
       "items": [
         {
           "role": {
-            "en": "Video Editor & Web Developer",
-            "ku": "مۆنتێر و گەشەپێدەری وێب"
+            "ku": "مۆنتێر و گەشەپێدەری وێب",
+            "en": "Video Editor & Web Developer"
           },
           "place": {
-            "en": "Freelance",
-            "ku": "کاری سەربەخۆ"
+            "ku": "کاری سەربەخۆ",
+            "en": "Freelance"
           },
           "year": "2023 - 2026",
           "desc": {
-            "en": "Creating high-quality videos and modern websites.",
-            "ku": "دروستکردنی ڤیدیۆی کوالێتی بەرز و وێبسایتی مۆدێرن بە TailwindCSS."
+            "ku": "دروستکردنی ڤیدیۆی کوالێتی بەرز و وێبسایتی مۆدێرن بە TailwindCSS.",
+            "en": "Creating high-quality videos and modern websites."
           }
         }
       ]
@@ -63,15 +63,15 @@
       "list": [
         {
           "name": {
-            "en": "Video Editing & Motion",
-            "ku": "مۆنتاژی ڤیدیۆ و مۆشن"
+            "ku": "مۆنتاژی ڤیدیۆ و مۆشن",
+            "en": "Video Editing & Motion"
           },
           "percent": "90"
         },
         {
           "name": {
-            "en": "Web Development",
-            "ku": "دروستکردنی وێبسایت"
+            "ku": "دروستکردنی وێبسایت",
+            "en": "Web Development"
           },
           "percent": "85"
         }
@@ -95,7 +95,7 @@
         "en": "Sulaymaniyah, Iraq",
         "ku": "سلێمانی، عێراق"
       },
-      "formKey": ""
+      "formKey": "e11bef32-363b-4c18-b93e-b519cf166cd0"
     }
   },
   "projects": [
