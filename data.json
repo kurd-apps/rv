@@ -23,8 +23,8 @@
       },
       "image": "images/1772618115973-rivan.png",
       "imagePos": {
-        "x": "50",
-        "y": "0"
+        "x": 50,
+        "y": 50
       }
     },
     "about": {
@@ -40,12 +40,12 @@
     "businesses": [
       {
         "heading": {
-          "ku": "کوردیش ئەپس",
-          "en": "Kurdish Apps"
+          "en": "Kurdish Apps",
+          "ku": "کوردیش ئەپس"
         },
         "desc": {
-          "ku": "دامەزرێنەری بزنسی 'کوردیش ئەپس'م، کە ئامانجی دروستکردنی ئەپلیکەیشن و وێبسایتی پێشکەوتووە بۆ خزمەتکردنی کۆمەڵگەی دیجیتاڵی کوردی.",
-          "en": "I am the founder of the business 'Kurdish Apps', which aims to create advanced applications and websites to serve the Kurdish digital community."
+          "en": "I am the founder of the business 'Kurdish Apps', which aims to create advanced applications and websites to serve the Kurdish digital community.",
+          "ku": "دامەزرێنەری بزنسی 'کوردیش ئەپس'م، کە ئامانجی دروستکردنی ئەپلیکەیشن و وێبسایتی پێشکەوتووە بۆ خزمەتکردنی کۆمەڵگەی دیجیتاڵی کوردی."
         },
         "logo": "images/1772615613895-3004022713918530097299244561243761708459415n.png",
         "socials": {
@@ -57,12 +57,12 @@
       },
       {
         "heading": {
-          "ku": "شیرینستان",
-          "en": "Shirinistan"
+          "en": "Shirinistan",
+          "ku": "شیرینستان"
         },
         "desc": {
-          "ku": "دامەزرێنەری کارگەی 'شیرینستان'م کە تایبەتە بە دروستکردنی شیرینی بۆ بۆنە و ئاهەنگەکان.",
-          "en": "Founder of 'Shirinistan,' a factory specializing in crafting premium sweets and cookies for events and celebrations."
+          "en": "Founder of 'Shirinistan,' a factory specializing in crafting premium sweets and cookies for events and celebrations.",
+          "ku": "دامەزرێنەری کارگەی 'شیرینستان'م کە تایبەتە بە دروستکردنی شیرینی بۆ بۆنە و ئاهەنگەکان."
         },
         "logo": "images/1772618930244-banner.png",
         "socials": {
@@ -142,8 +142,8 @@
     },
     "clients": {
       "heading": {
-        "en": "Companies",
-        "ku": "کۆمپانیاکان"
+        "en": "Partners",
+        "ku": "هاوبەشەکانم (کۆمپانیاکان)"
       },
       "logos": [
         "images/1772614709406-3004022713918530097299244561243761708459415n.png"
