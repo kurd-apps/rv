@@ -1,45 +1,85 @@
 {
   "sections": {
     "hero": {
-      "name": { "en": "Your Name", "ku": "ناوی تۆ" },
-      "title": { "en": "Creative Director & Developer", "ku": "دەرهێنەری داهێنەر و گەشەپێدەر" },
-      "subtitle": { "en": "I build digital experiences.", "ku": "ئەزموونی دیجیتاڵی دروست دەکەم." },
+      "name": {
+        "en": "Your Name",
+        "ku": "ناوی تۆ"
+      },
+      "title": {
+        "en": "Creative Director & Developer",
+        "ku": "دەرهێنەری داهێنەر و گەشەپێدەر"
+      },
+      "subtitle": {
+        "en": "I build digital experiences.",
+        "ku": "ئەزموونی دیجیتاڵی دروست دەکەم."
+      },
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
     },
     "about": {
-      "heading": { "en": "About Me", "ku": "دەربارەی من" },
-      "desc": { "en": "I am a passionate designer...", "ku": "من دیزاینەرێکی پڕخولیام..." }
+      "heading": {
+        "en": "About Me",
+        "ku": "دەربارەی من"
+      },
+      "desc": {
+        "en": "I am a passionate designer...",
+        "ku": "من دیزاینەرێکی پڕخولیام..."
+      }
     },
     "cv": {
-      "heading": { "en": "Experience", "ku": "ئەزموونەکان" },
+      "heading": {
+        "en": "Experience",
+        "ku": "ئەزموونەکان"
+      },
       "items": []
     },
     "skills": {
-      "heading": { "en": "Expertise", "ku": "شارەزاییەکان" },
+      "heading": {
+        "en": "Expertise",
+        "ku": "شارەزاییەکان"
+      },
       "list": []
     },
     "clients": {
-      "heading": { "en": "Companies I've Worked With", "ku": "ئەو کۆمپانیایانەی کارم بۆ کردوون" },
+      "heading": {
+        "en": "Companies I've Worked With",
+        "ku": "ئەو کۆمپانیایانەی کارم بۆ کردوون"
+      },
       "logos": []
     },
     "contact": {
-      "heading": { "en": "Let's Work Together", "ku": "پەیوەندیم پێوە بکە" },
+      "heading": {
+        "en": "Let's Work Together",
+        "ku": "پەیوەندیم پێوە بکە"
+      },
       "email": "hello@example.com",
       "phone": "+964 770 000 0000",
-      "address": { "en": "Sulaymaniyah, Iraq", "ku": "سلێمانی، عێراق" }
+      "address": {
+        "en": "Sulaymaniyah, Iraq",
+        "ku": "سلێمانی، عێراق"
+      }
     }
   },
   "projects": [
     {
-      "id": 1,
-      "title": { "en": "Medical Lab Dashboard", "ku": "داشبۆردی تاقیگەی پزیشکی" },
+      "title": {
+        "ku": "داشبۆردی تاقیگەی پزیشکی",
+        "en": "Medical Lab Dashboard"
+      },
       "category": "وێب دیزاین",
       "date": "2026-03-01",
-      "shortDesc": { "en": "A complete system.", "ku": "سیستەمێکی تەواو بۆ تاقیگەکان." },
-      "fullDesc": { "en": "<b>Detailed</b> description here.", "ku": "<b>سیستەمێکی زۆر پێشکەوتوو</b> کە دەتوانێت هەموو کارەکان ئاسان بکات." },
-      "images": ["https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"],
+      "shortDesc": {
+        "ku": "سیستەمێکی تەواو بۆ تاقیگەکان.",
+        "en": "A complete system."
+      },
+      "fullDesc": {
+        "ku": "<b>سیستەمێکی زۆر پێشکەوتوو</b> کە دەتوانێت هەموو کارەکان ئاسان بکات.",
+        "en": "<b>Detailed</b> description here."
+      },
       "videoLink": "",
-      "websiteLink": "https://example.com"
+      "websiteLink": "https://example.com",
+      "images": [
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop"
+      ]
     }
   ]
 }
