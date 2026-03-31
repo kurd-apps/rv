@@ -215,19 +215,20 @@
       },
       "fullDesc": {
         "ku": "وەک کارسازێک و کەسێکی خولیای تەکنەلۆجیا، یەکێک لەو پڕۆژانەی کە زۆر جێگەی شانازیمە، دامەزراندن و بەڕێوەبردنی کارگەی <b>«شیرینستان»ـە</b>. شیرینستان تەنها کارگەیەکی ئاسایی نییە بۆ دروستکردنی شیرینی، بەڵکو براندێکە کە تایبەتە بە دروستکردنی شیرینی و کوکیز بۆ بۆنە و ئاهەنگەکان، بە کوالێتییەکی بەرز و تامی تایبەت.<br><br>لەپاڵ بەڕێوەبردنی کارگە و سەرپەرشتیکردنی بەرهەمەکان، تەواوی ناسنامەی دیجیتاڵی و پەرەپێدانی براندەکەم لە ئەستۆ گرتووە. بەکارهێنانی پاشخانم لە پەرەپێدانی وێب و کاری میدیاییدا وایکردووە کە شیرینستان خاوەنی پێگەیەکی بەهێز بێت لە جیهانی دیجیتاڵیدا. بەشێک لە کارەکانم بۆ ئەم پڕۆژەیە بریتین لە:<br><ul><li><b>گەشەپێدانی وێبسایت:</b> دروستکردنی ماڵپەڕێکی تایبەت بە براندەکە بۆ پیشاندانی بەرهەمەکان و ئاسانکاری بۆ کڕیاران.</li><li><b>بەرهەمهێنانی میدیایی و ڤیدیۆیی:</b> ئامادەکردنی سیناریۆ و بەرهەمهێنانی ڤیدیۆی ڕێکلامی سەرنجڕاکێش. لەم کارانەدا جەختێکی زۆرم کردووەتەوە سەر بەکارهێنانی دەق و گێڕانەوەی کوردی ڕەسەن.</li><li><b>بەڕێوەبردنی سۆشیاڵ میدیا:</b> دروستکردن و بەڕێوەبردنی تۆڕە کۆمەڵایەتییەکان بۆ بڵاوکردنەوەی بەرهەمەکان.</li></ul><br>ئەم پڕۆژەیە بەڵگەیەکی ڕوونە لەسەر توانای من بۆ گۆڕینی بیرۆکەیەک بۆ بزنسێکی ڕاستەقینە، و بەکارهێنانی تواناکانم لە دیزاین، بەرنامەسازی، و مارکێتینگ بۆ سەرخستنی.",
-        "en": "As an entrepreneur with a passion for technology, one of the projects I am most proud of founding and managing is <b>Shirinistan</b>. More than just a traditional confectionery, Shirinistan is a specialized factory dedicated to crafting premium sweets and cookies for events and celebrations, focusing on high quality and unique flavors.<br><br>In addition to managing the factory and overseeing product development, I have personally directed the brand's entire digital identity. By leveraging my background in web development and digital media, I have established a strong online presence for Shirinistan. My core contributions to this project include:<br><ul><li><b>Web Development:</b> Designing and developing a dedicated website to showcase our products and streamline the customer experience.</li><li><b>Media & Video Production:</b> Scripting and producing engaging video advertisements using authentic Kurdish scenarios.</li><li><b>Social Media Management:</b> Creating and managing our social media platforms to distribute content and engage directly with our customers.</li></ul><br>This project stands as a clear testament to my ability to transform an idea into a thriving business, utilizing my diverse skills in programming, graphic design, and media production to drive success."
+        "en": "As an entrepreneur with a passion for technology, one of the projects I am most proud of founding and managing is <b>Shirinistan</b>. More than just a traditional confectionery, Shirinistan is a specialized factory dedicated to crafting premium sweets and cookies for events and celebrations, focusing on high quality and unique flavors.<br><br>In addition to managing the factory and overseeing product development, I have personally directed the brand's entire digital identity. By leveraging my background in web development and digital media, I have established a strong online presence for Shirinistan. My core contributions to this project include:<br><ul><li><b>Web Development:</b> Designing and developing a dedicated website to showcase our products and streamline the customer experience.</li><li><b>Media &amp; Video Production:</b> Scripting and producing engaging video advertisements using authentic Kurdish scenarios.</li><li><b>Social Media Management:</b> Creating and managing our social media platforms to distribute content and engage directly with our customers.</li></ul><br>This project stands as a clear testament to my ability to transform an idea into a thriving business, utilizing my diverse skills in programming, graphic design, and media production to drive success."
       },
       "images": [
         "images/1772618930244-banner.png"
       ],
       "bannerImage": "images/1772618930244-banner.png",
-      "videoLink": "https://youtu.be/jUgfWwRHSwA?si=uMYiC0EozJw2dCvM",
+      "videoLink": "",
       "date": "2025-11-01",
       "websiteLink": "https://shirinstan.wuaze.com/",
-      "displayType": "video",
+      "displayType": "website",
       "videoLinks": [
         "https://youtu.be/jUgfWwRHSwA?si=uMYiC0EozJw2dCvM"
-      ]
+      ],
+      "extraLinks": []
     }
   ],
   "custom": {
