@@ -24,8 +24,15 @@
         
         .business-slide { opacity: 0; transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; transform: translateY(10px); position: absolute; inset: 0; visibility: hidden; }
         .business-slide.active { opacity: 1; transform: translateY(0); z-index: 10; position: relative; visibility: visible; }
-                .hide-scrollbar::-webkit-scrollbar { display: none; }
+                /* CSS بۆ شاردنەوەی سکڕۆڵی سلایدەری مۆدێلەکە */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Modern Slider Styles */
+        .slider-slide { opacity: 0; transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; position: absolute; inset: 0; transform: scale(1.05) translateZ(0); z-index: 0; visibility: hidden; }
+        .slider-slide.active { opacity: 1; transform: scale(1) translateZ(0); z-index: 10; visibility: visible; }
+        .glass-btn { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .glass-btn:hover { background: rgba(255, 255, 255, 0.25); border-color: rgba(255, 255, 255, 0.4); }
     </style>
 </head>
 <body class="transition-all duration-300 antialiased relative">
@@ -171,7 +178,8 @@
         let businessSlideIndex = 0;
         let businessSlideInterval;
         let typingTimeout; // گۆڕاوی تایبەت بە لۆپی تایپینگەکە
-        let projectSliderInterval; // بۆ کۆنترۆڵکردنی ئۆتۆ-سلایدەری پڕۆژەکان
+        let modernSliderInterval; // بۆ کۆنترۆڵکردنی سلایدەرە مۆدێرنەکە
+        let modernSlideIndex = 0;بۆ کۆنترۆڵکردنی ئۆتۆ-سلایدەری پڕۆژەکان
         // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -503,15 +511,14 @@
             const isKu = currentLang === 'ku'; 
             const detailView = document.getElementById('projectDetailView');
             
-            // شاردنەوەی بەشەکانی تری ماڵپەڕەکە بۆ ئەوەی وەک پەڕەیەکی نوێ دەرکەوێت
             document.querySelectorAll('body > section:not(#projectDetailView)').forEach(s => s.classList.add('hidden'));
             detailView.classList.remove('hidden');
             window.scrollTo({top: 0, behavior: 'instant'});
-            clearInterval(projectSliderInterval);
+            clearInterval(modernSliderInterval);
 
-            // ١. دروستکردنی سەرەوەی پڕۆژەکە (دوگمەی گەڕانەوە، نرخ، بەروار، تایتڵ، بانەر)
+            // Top Content
             let html = `
-            <div class="max-w-5xl mx-auto pt-32 pb-20 px-6">
+            <div class="max-w-6xl mx-auto pt-32 pb-20 px-6">
                 <button onclick="closeProjectView()" class="mb-10 text-gray-500 hover:text-indigo-600 font-bold flex items-center gap-2 transition text-lg bg-white px-5 py-2 rounded-full shadow-sm border border-gray-100 hover:shadow-md">
                     <i class="fa-solid ${isKu ? 'fa-arrow-right' : 'fa-arrow-left'}"></i> ${isKu ? 'گەڕانەوە' : 'Back'}
                 </button>
@@ -527,61 +534,78 @@
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-12 text-gray-900 leading-tight">${p.title[currentLang]}</h2>
             `;
 
-            // بانەر لە سەرەوە
+            // Top Banner
             const bannerImg = p.bannerImage || (p.images && p.images.length > 0 ? p.images[0] : null);
             const dispType = p.displayType || 'image';
 
             if (dispType === 'website' && p.websiteLink) {
-                html += `<div class="w-full h-[60vh] rounded-[2rem] overflow-hidden shadow-2xl mb-12 bg-gray-100 border border-gray-200 relative"><iframe src="${p.websiteLink}" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" class="w-full h-full border-0 absolute top-0 left-0"></iframe></div>`;
+                html += `<div class="w-full h-[60vh] rounded-[30px] overflow-hidden shadow-2xl mb-12 bg-gray-100 border border-gray-200 relative"><iframe src="${p.websiteLink}" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" class="w-full h-full border-0 absolute top-0 left-0"></iframe></div>`;
             } else if (bannerImg) {
-                html += `<div class="w-full h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl mb-12 bg-gray-100"><img src="${getFullImageUrl(bannerImg)}" class="w-full h-full object-cover"></div>`;
+                html += `<div class="w-full h-[50vh] md:h-[70vh] rounded-[30px] overflow-hidden shadow-2xl mb-12 bg-gray-100"><img src="${getFullImageUrl(bannerImg)}" class="w-full h-full object-cover"></div>`;
             }
 
-            // ٢. تێکست و وردەکارییەکان
+            // Description
             html += `<div class="text-lg md:text-xl text-gray-700 leading-relaxed mb-16 text-justify prose max-w-none [&_a]:text-indigo-600 [&_a]:underline [&_a]:font-bold">${p.fullDesc[currentLang]}</div>`;
 
-            // ٣. سلایدەری ئۆتۆماتیکی (وێنە و ڤیدیۆ) لە خوارەوەی تێکستەکە
+            // Setup Media for Modern Slider
             let mediaItems = [];
-            if (p.videoLink) mediaItems.push({ type: 'video', url: getEmbedUrl(p.videoLink) });
+            let allImages = [];
+            if (p.bannerImage) allImages.push(p.bannerImage);
+            if (p.images) p.images.forEach(img => { if(!allImages.includes(img)) allImages.push(img); });
             
-            let otherImages = p.images ? p.images.filter(img => img !== bannerImg) : [];
-            otherImages.forEach(img => mediaItems.push({ type: 'image', url: getFullImageUrl(img) }));
+            if (p.videoLink) mediaItems.push({ type: 'video', url: getEmbedUrl(p.videoLink), thumb: allImages.length > 0 ? getFullImageUrl(allImages[0]) : '' });
+            allImages.forEach(img => mediaItems.push({ type: 'image', url: getFullImageUrl(img), thumb: getFullImageUrl(img) }));
 
+            // Render Modern Slider
             if (mediaItems.length > 0) {
+                const initialBg = mediaItems[0].thumb || '';
                 html += `
-                <div class="mb-16">
-                    <h3 class="text-2xl font-black mb-6 text-gray-900 border-b pb-4">${isKu ? 'پێشانگای پڕۆژە' : 'Project Gallery'}</h3>
-                    <div class="relative w-full rounded-[2rem] overflow-hidden shadow-2xl bg-[#020617] group border border-gray-200">
-                        <div id="bottomProjectSlider" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar w-full h-[40vh] md:h-[65vh] scroll-smooth" dir="ltr">`;
+                <div class="mb-20">
+                    <h3 class="text-3xl font-black mb-10 text-gray-900 border-b pb-4">${isKu ? 'پێشانگای پڕۆژە' : 'Project Gallery'}</h3>
+                    
+                    <!-- Main Slider Viewport -->
+                    <div class="relative w-full rounded-[30px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-[#050505] group border border-gray-800/20 aspect-video md:h-[70vh]">
+                        
+                        <!-- Ambient Blur Background -->
+                        <div id="ambientBg" class="absolute inset-0 bg-cover bg-center opacity-40 blur-[60px] scale-125 transition-all duration-1000 z-0" style="background-image: url('${initialBg}')"></div>
+                        <div class="absolute inset-0 bg-black/30 z-0 pointer-events-none"></div>
+
+                        <!-- Slides Container -->
+                        <div class="absolute inset-0 z-10" id="modernSliderContainer">`;
                 
                 mediaItems.forEach((item, idx) => {
-                    html += `<div class="w-full flex-shrink-0 snap-center relative h-full flex items-center justify-center slider-item">`;
-                    if(item.type === 'video') {
-                        html += `<iframe src="${item.url}" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-                    } else {
-                        html += `<img src="${item.url}" class="w-full h-full object-contain">`;
-                    }
-                    html += `</div>`;
+                    html += `
+                    <div class="slider-slide w-full h-full flex items-center justify-center ${idx === 0 ? 'active' : ''}" data-bg="${item.thumb}">
+                        ${item.type === 'video' 
+                            ? `<iframe src="${item.url}" class="w-full h-full border-0 shadow-2xl relative z-10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+                            : `<img src="${item.url}" class="w-full h-full object-contain relative z-10 drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">`
+                        }
+                        <!-- Gradient Overlay -->
+                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-20"></div>
+                    </div>`;
                 });
 
-                html += `</div>`; // داخستنی کانتەینەری سلایدەر
+                html += `</div>`; // Close Slides Container
                 
-                // دوگمەکانی سلایدەر
+                // Navigation Glass Buttons
                 if (mediaItems.length > 1) {
                     html += `
-                        <button onclick="slideProject(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-900 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition z-10 text-xl"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button onclick="slideProject(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-900 w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition z-10 text-xl"><i class="fa-solid fa-chevron-right"></i></button>`;
+                        <button onclick="slideModernProject(-1)" class="glass-btn absolute left-6 top-1/2 -translate-y-1/2 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 text-2xl hover:scale-110"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button onclick="slideModernProject(1)" class="glass-btn absolute right-6 top-1/2 -translate-y-1/2 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-30 text-2xl hover:scale-110"><i class="fa-solid fa-chevron-right"></i></button>`;
                 }
-                html += `</div>`;
+                html += `</div>`; // Close Main Viewport
 
-                // Thumbnails لە خوارەوەی سلایدەرەکە بۆ بینینی داهاتوو
+                // Thumbnails Row
                 if (mediaItems.length > 1) {
-                    html += `<div class="flex justify-center items-center gap-3 mt-6 flex-wrap" dir="ltr">`;
+                    html += `
+                    <div class="flex overflow-x-auto hide-scrollbar gap-4 mt-6 pb-4" dir="ltr" style="scroll-snap-type: x mandatory;">`;
                     mediaItems.forEach((item, idx) => {
-                        let thumbContent = item.type === 'video' ? `<i class="fa-solid fa-play text-gray-300 text-xl"></i>` : `<img src="${item.url}" class="w-full h-full object-cover">`;
+                        let isVid = item.type === 'video';
+                        let thumbUrl = item.thumb || 'https://via.placeholder.com/150/020617/FFFFFF?text=Video';
                         html += `
-                        <button onclick="goToSlide(${idx})" class="thumb-btn w-20 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${idx === 0 ? 'border-indigo-600 scale-110 shadow-lg' : 'border-transparent opacity-50 hover:opacity-100 bg-gray-800 flex items-center justify-center'}">
-                            ${thumbContent}
+                        <button onclick="goToModernSlide(${idx})" class="thumb-modern-btn shrink-0 w-36 h-24 rounded-2xl overflow-hidden relative border-[3px] transition-all duration-500 scroll-snap-align-start ${idx === 0 ? 'border-sky-500 shadow-[0_0_20px_rgba(14,165,233,0.4)] scale-105' : 'border-transparent opacity-50 hover:opacity-100 hover:scale-105 bg-gray-900'}">
+                            <img src="${thumbUrl}" class="w-full h-full object-cover">
+                            ${isVid ? `<div class="absolute inset-0 bg-black/40 flex items-center justify-center"><div class="w-10 h-10 bg-sky-500/80 backdrop-blur rounded-full flex items-center justify-center"><i class="fa-solid fa-play text-white text-sm ml-1"></i></div></div>` : ''}
                         </button>`;
                     });
                     html += `</div>`;
@@ -590,30 +614,35 @@
             }
 
             if(p.websiteLink && dispType !== 'website') {
-                html += `<div class="mb-16 text-center md:text-start"><a href="${p.websiteLink}" target="_blank" class="bg-indigo-600 text-white px-10 py-4 rounded-2xl font-bold hover:bg-indigo-700 shadow-lg inline-flex items-center gap-2 text-lg transition hover:-translate-y-1">🌐 ${isKu ? 'سەردانی وێبسایت بکە' : 'Visit Website'}</a></div>`;
+                html += `<div class="mb-16 text-center md:text-start"><a href="${p.websiteLink}" target="_blank" class="bg-indigo-600 text-white px-10 py-4 rounded-[1.5rem] font-bold hover:bg-indigo-700 shadow-lg inline-flex items-center gap-2 text-lg transition hover:-translate-y-1">🌐 ${isKu ? 'سەردانی وێبسایت بکە' : 'Visit Website'}</a></div>`;
             }
 
-            // ٤. پڕۆژەکانی هاوشێوە و بەشی پەیوەندی کردن
-            const related = siteData.projects.map((proj, i) => ({...proj, origIndex: i}))
-                .filter(proj => proj.category === p.category && proj.origIndex !== index).slice(0, 2);
+            // Related Projects (Intelligent Fallback Logic)
+            const relatedTargetCount = 2;
+            let related = siteData.projects.map((proj, i) => ({...proj, origIndex: i})).filter(proj => proj.category === p.category && proj.origIndex !== index);
             
-            if (related.length === 0) { // ئەگەر هاوشێوە نەبوو، هەڕەمەکی پیشان بدە
-                related.push(...siteData.projects.map((proj, i) => ({...proj, origIndex: i})).filter(proj => proj.origIndex !== index).slice(0, 2));
+            // ئەگەر هاوپۆلەکە تەواو نەبوو، لە جۆرەکانی تر بهێنە
+            if (related.length < relatedTargetCount) {
+                const needed = relatedTargetCount - related.length;
+                const otherTypes = siteData.projects.map((proj, i) => ({...proj, origIndex: i})).filter(proj => proj.category !== p.category && proj.origIndex !== index);
+                related.push(...otherTypes.slice(0, needed));
             }
+
+            related = related.slice(0, relatedTargetCount);
 
             if (related.length > 0) {
                 html += `
                 <div class="mt-20 pt-16 border-t border-gray-200">
-                    <h3 class="text-3xl font-black mb-10 text-center text-gray-900">${isKu ? 'پڕۆژەی هاوشێوە' : 'Similar Projects'}</h3>
+                    <h3 class="text-3xl font-black mb-10 text-center text-gray-900">${isKu ? 'پڕۆژەی تری پەیوەندیدار' : 'More Works'}</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         ${related.map(r => `
-                            <div onclick="openProject(${r.origIndex})" class="group cursor-pointer bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full">
-                                <div class="w-full h-56 overflow-hidden bg-gray-100 relative">
-                                    <img src="${getFullImageUrl(r.bannerImage || (r.images && r.images[0] ? r.images[0] : ''))}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div onclick="openProject(${r.origIndex})" class="group cursor-pointer bg-white rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col h-full">
+                                <div class="w-full h-64 overflow-hidden bg-gray-100 relative">
+                                    <img src="${getFullImageUrl(r.bannerImage || (r.images && r.images[0] ? r.images[0] : ''))}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                 </div>
-                                <div class="p-6">
-                                    <p class="text-indigo-600 text-xs font-bold mb-1 uppercase tracking-wide">${r.category}</p>
-                                    <h4 class="text-xl font-bold text-gray-900">${r.title[currentLang]}</h4>
+                                <div class="p-8">
+                                    <p class="text-indigo-600 text-xs font-bold mb-2 uppercase tracking-widest">${r.category}</p>
+                                    <h4 class="text-2xl font-black text-gray-900">${r.title[currentLang]}</h4>
                                 </div>
                             </div>
                         `).join('')}
@@ -621,15 +650,16 @@
                 </div>`;
             }
 
-            // Div about works (گەڕانەوە بۆ پەیوەندی)
+            // CTA Block
             html += `
-                <div class="mt-16 bg-gradient-to-br from-gray-900 to-[#020617] rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
-                    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+                <div class="mt-16 bg-gradient-to-br from-indigo-900 via-gray-900 to-[#020617] rounded-[2.5rem] p-10 md:p-16 text-center text-white relative overflow-hidden shadow-2xl border border-white/10">
+                    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0); background-size: 32px 32px;"></div>
+                    <div class="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500 rounded-full blur-[80px] opacity-30 pointer-events-none"></div>
                     <div class="relative z-10">
-                        <h3 class="text-3xl md:text-4xl font-black mb-4">${isKu ? 'بیرۆکەیەکی لەم شێوەیەت هەیە؟' : 'Have a similar project in mind?'}</h3>
-                        <p class="text-gray-400 mb-8 max-w-2xl mx-auto text-lg">${isKu ? 'با پێکەوە کار بکەین بۆ بەدیهێنانی بیرۆکەکانت و گۆڕینیان بۆ واقیع بە باشترین کوالێتی.' : 'Let’s collaborate to bring your ideas to life and turn them into reality with premium quality.'}</p>
-                        <button onclick="closeProjectView(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 100);" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 rounded-2xl transition shadow-lg inline-flex items-center gap-2 text-lg hover:-translate-y-1">
-                            <i class="fa-regular fa-envelope"></i> ${isKu ? 'با دەست پێ بکەین' : 'Let\'s Start'}
+                        <h3 class="text-3xl md:text-5xl font-black mb-6 tracking-tight">${isKu ? 'بیرۆکەیەکی لەم شێوەیەت هەیە؟' : 'Have a similar project in mind?'}</h3>
+                        <p class="text-gray-300 mb-10 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">${isKu ? 'با پێکەوە کار بکەین بۆ بەدیهێنانی بیرۆکەکانت و گۆڕینیان بۆ واقیع بە باشترین کوالێتی.' : 'Let’s collaborate to bring your ideas to life and turn them into reality with premium quality.'}</p>
+                        <button onclick="closeProjectView(); setTimeout(() => document.getElementById('contact').scrollIntoView({behavior: 'smooth'}), 100);" class="bg-white text-indigo-900 hover:bg-sky-100 font-black py-4 px-10 rounded-2xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] inline-flex items-center gap-3 text-lg hover:-translate-y-1 hover:scale-105">
+                            <i class="fa-regular fa-paper-plane"></i> ${isKu ? 'با دەست پێ بکەین' : 'Let\'s Start'}
                         </button>
                     </div>
                 </div>
@@ -638,53 +668,63 @@
             detailView.innerHTML = html;
 
             if (mediaItems.length > 1) {
-                currentSlideIndex = 0;
-                startProjectAutoSlider(mediaItems.length);
+                modernSlideIndex = 0;
+                startModernSlider(mediaItems.length);
             }
         }
 
-        // فەنکشنەکانی کۆنترۆڵکردنی بینینی پەڕەی پڕۆژە و ئۆتۆ-سلایدەر
         function closeProjectView() {
-            clearInterval(projectSliderInterval);
+            clearInterval(modernSliderInterval);
             document.getElementById('projectDetailView').classList.add('hidden');
             document.querySelectorAll('body > section:not(#projectDetailView)').forEach(s => s.classList.remove('hidden'));
             document.getElementById('projects').scrollIntoView({behavior: 'instant'});
         }
 
-        function slideProject(direction) {
-            const container = document.getElementById('bottomProjectSlider');
-            if(!container) return;
-            const itemsCount = container.querySelectorAll('.slider-item').length;
-            
-            currentSlideIndex += direction;
-            if (currentSlideIndex < 0) currentSlideIndex = itemsCount - 1;
-            if (currentSlideIndex >= itemsCount) currentSlideIndex = 0;
-            goToSlide(currentSlideIndex);
+        function slideModernProject(direction) {
+            const slides = document.querySelectorAll('.slider-slide');
+            if(slides.length === 0) return;
+            modernSlideIndex += direction;
+            if(modernSlideIndex < 0) modernSlideIndex = slides.length - 1;
+            if(modernSlideIndex >= slides.length) modernSlideIndex = 0;
+            goToModernSlide(modernSlideIndex);
         }
 
-        function goToSlide(index) {
-            const container = document.getElementById('bottomProjectSlider');
-            if(!container) return;
-            currentSlideIndex = index;
-            const itemWidth = container.offsetWidth;
-            container.scrollTo({left: itemWidth * index, behavior: 'smooth'});
+        function goToModernSlide(index) {
+            const slides = document.querySelectorAll('.slider-slide');
+            const thumbs = document.querySelectorAll('.thumb-modern-btn');
+            const ambientBg = document.getElementById('ambientBg');
+            if(!slides.length) return;
 
-            document.querySelectorAll('.thumb-btn').forEach((btn, idx) => {
-                if(idx === index) {
-                    btn.classList.remove('border-transparent', 'opacity-50');
-                    btn.classList.add('border-indigo-600', 'scale-110', 'shadow-lg');
+            modernSlideIndex = index;
+
+            slides.forEach((slide, idx) => {
+                const iframe = slide.querySelector('iframe');
+                if(idx !== index) {
+                    slide.classList.remove('active');
+                    if(iframe) { const src = iframe.src; iframe.src = src; } // Reset iframe to stop video
                 } else {
-                    btn.classList.add('border-transparent', 'opacity-50');
-                    btn.classList.remove('border-indigo-600', 'scale-110', 'shadow-lg');
+                    slide.classList.add('active');
+                    if(ambientBg) { ambientBg.style.backgroundImage = `url('${slide.getAttribute('data-bg')}')`; }
                 }
             });
 
-            startProjectAutoSlider(document.querySelectorAll('.slider-item').length);
+            thumbs.forEach((btn, idx) => {
+                if(idx === index) {
+                    btn.classList.add('border-sky-500', 'shadow-[0_0_20px_rgba(14,165,233,0.4)]', 'scale-105');
+                    btn.classList.remove('border-transparent', 'opacity-50');
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                } else {
+                    btn.classList.remove('border-sky-500', 'shadow-[0_0_20px_rgba(14,165,233,0.4)]', 'scale-105');
+                    btn.classList.add('border-transparent', 'opacity-50');
+                }
+            });
+
+            startModernSlider(slides.length);
         }
 
-        function startProjectAutoSlider(itemsCount) {
-            clearInterval(projectSliderInterval);
-            projectSliderInterval = setInterval(() => { slideProject(1); }, 4000);
+        function startModernSlider(count) {
+            clearInterval(modernSliderInterval);
+            modernSliderInterval = setInterval(() => { slideModernProject(1); }, 6000);
         }
         document.getElementById('langToggle').addEventListener('click', () => { currentLang = currentLang === 'en' ? 'ku' : 'en'; renderUI(); });
         loadData();
