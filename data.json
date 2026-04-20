@@ -244,6 +244,13 @@
             "en": "AI"
           },
           "percent": "75"
+        },
+        {
+          "name": {
+            "ku": "کۆمپیوتەر بەگشتی",
+            "en": "General Computer"
+          },
+          "percent": "90"
         }
       ]
     },
