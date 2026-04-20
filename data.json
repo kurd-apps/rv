@@ -121,14 +121,89 @@
         },
         {
           "role": {
-            "ku": "تاقیگە",
-            "en": "Lab"
+            "ku": "تاقیگەی سەنتەری شەکرە و کوێرەڕژێنەکان",
+            "en": "Diabetes & Endocrine Centre labratory"
           },
           "place": {
             "ku": "سلێمانی",
             "en": "Sulaymanyah"
           },
-          "year": "30/5/2020 - 1/11/2025",
+          "year": "1/7/2017 - 20/8/2019",
+          "desc": {
+            "ku": "",
+            "en": ""
+          }
+        },
+        {
+          "role": {
+            "ku": "تاقیگەی تاوەری تەندروستی سمارت",
+            "en": "Smart Health Tower labratory"
+          },
+          "place": {
+            "ku": "سلێمانی",
+            "en": "Sulaymanyah"
+          },
+          "year": "1/6/2020 - 1/11/2025",
+          "desc": {
+            "ku": "",
+            "en": ""
+          }
+        },
+        {
+          "role": {
+            "ku": "بەشی ڕاهێنانی تاوەری تەندروستی سمارت",
+            "en": "Smart Health Tower Training Department"
+          },
+          "place": {
+            "ku": "سلێمانی",
+            "en": "Sulaymanyah"
+          },
+          "year": "1/11/2025 - Present",
+          "desc": {
+            "ku": "",
+            "en": ""
+          }
+        },
+        {
+          "role": {
+            "ku": "چاپخانەی بروسکە",
+            "en": "Broska Kurdistan"
+          },
+          "place": {
+            "ku": "سلێمانی",
+            "en": "Sulaymanyah"
+          },
+          "year": "16/5/2018 - 16/6/2018",
+          "desc": {
+            "ku": "",
+            "en": ""
+          }
+        },
+        {
+          "role": {
+            "ku": "تاقیگەی نەخۆشخانەی شار",
+            "en": "Shar Hospital laboratory"
+          },
+          "place": {
+            "ku": "سلێمانی",
+            "en": "Sulaymanyah"
+          },
+          "year": "1/8/2017 - 20/8/2019",
+          "desc": {
+            "ku": "",
+            "en": ""
+          }
+        },
+        {
+          "role": {
+            "ku": "تاقیگەی میران بۆ شیکاری نەخۆشیەکان",
+            "en": "Miran laboratory"
+          },
+          "place": {
+            "ku": "سلێمانی",
+            "en": "Sulaymanyah"
+          },
+          "year": "20/8/2014 - 1/6/2020",
           "desc": {
             "ku": "",
             "en": ""
