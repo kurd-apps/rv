@@ -306,6 +306,34 @@
   "projects": [
     {
       "title": {
+        "ku": "سیستەمی تەواوەتی وەرگرتن و بەڕێوەبردنی فیدباک",
+        "en": "Complete Feedback Management System"
+      },
+      "category": "وێب دیزاین",
+      "shortDesc": {
+        "ku": "ئایا دەتەوێت بزانیت بەکارهێنەرەکانت چۆن بیر دەکەنەوە؟ لەم پڕۆژە نوێیەمدا، سیستەمێکی زیرەکم بۆ وەرگرتنی فیدباک دروستکردووە کە کارەکە زۆر ئاسان دەکات.",
+        "en": "Want to know what your users are actually thinking? For my latest project, I built a smart feedback collection system that makes the whole process effortless."
+      },
+      "fullDesc": {
+        "ku": "<div>خۆشحاڵم کە ئەمڕۆ نوێترین کارم لەگەڵتان هاوبەش دەکەم، کە پێکهاتووە لە سیستەمێکی دیجیتاڵی ڕێکخراو بۆ وەرگرتن و شیکردنەوەی ڕا و سەرنجەکان (فیدباک). ئەم پڕۆژەیە بە جۆرێک دروستکراوە کە کارئاسانییەکی زۆر دەکات بۆ پەیوەندی نێوان بەکارهێنەران و خاوەن کار، و لە دوو بەشی سەرەکی پێکهاتووە:</div><div>&nbsp;١. فۆڕمی فیدباک (Feedback Form):</div><div>ڕووکارێکی سادە و خێرا کە ڕێگە بە بەکارهێنەران و سەردانکەران دەدات بە ئاسانی ڕا و سەرنج و پێشنیارەکانیان بنێرن.</div><div><br></div><div>&nbsp;٢. داشبۆردی بەڕێوەبردن (Feedback Dashboard):</div><div>ئەم بەشە تایبەتە بە کۆنترۆڵکردن و بینینی داتاکان. لێرەوە دەتوانیت بە شێوەیەکی ڕێکخراو و شیکارییانە سەیری سەرجەم ئەو فیدباکانە بکەیت کە نێردراون، ئەمەش یارمەتیدەرێکی سەرەکییە بۆ بەرەوپێشبردنی خزمەتگوزارییەکان و بڕیاردانی دروست لەسەر بنەمای داتا.</div><div><br></div><div>هیوادارم جێگەی سوود بێت، خۆشحاڵ دەبم بە بینینی ڕا و سەرنجەکانتان لەسەر ئەم پڕۆژەیە!</div>",
+        "en": "<div>I’m excited to share my latest project with you today: a fully integrated digital system for collecting and analyzing feedback. This project is designed to make communication between users and businesses seamless, and it consists of two main components:</div><div>&nbsp;1. The Feedback Form:</div><div>A clean, simple, and user-friendly interface that allows visitors to easily submit their thoughts, ratings, and suggestions.</div><div><br></div><div>&nbsp;2. The Admin Dashboard:</div><div>A dedicated space for data control and management. Here, you can view all submitted feedback in an organized and analytical layout. This is a powerful tool for improving services and making data-driven decisions.</div><div><br></div><div>I hope you find it useful. I would love to hear your thoughts and (ironically) your feedback on this project!</div>"
+      },
+      "images": [
+        "images/1776753234027-Screenshot20260421092206.png",
+        "images/1776753241368-Screenshot20260421092224.png",
+        "images/1776753249667-Screenshot20260421092640.png",
+        "images/1776753257512-Screenshot20260421092649.png",
+        "images/1776768929364-1.png"
+      ],
+      "videoLink": "",
+      "date": "2026-04-01",
+      "websiteLink": "https://smartacademysht-bot.github.io/Feedback-Form/",
+      "displayType": "image",
+      "bannerImage": "images/1776768929364-1.png",
+      "extraLinks": []
+    },
+    {
+      "title": {
         "ku": "CarLog",
         "en": "CarLog"
       },
