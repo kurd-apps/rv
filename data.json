@@ -356,7 +356,15 @@
       "websiteLink": "",
       "displayType": "image",
       "bannerImage": "images/1776697565370-GeminiGeneratedImage2rmfxa2rmfxa2rmf.png",
-      "extraLinks": []
+      "extraLinks": [
+        {
+          "title": {
+            "ku": "لینکی دابەزاندنی بەرنامەکە",
+            "en": "Download Link"
+          },
+          "url": "https://apkpure.com/p/com.rv.carlog"
+        }
+      ]
     },
     {
       "title": {
